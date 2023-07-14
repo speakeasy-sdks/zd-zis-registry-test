@@ -1,4 +1,9 @@
 configVersion: 1.0.0
+management:
+  docChecksum: 69546526e9c3f7c5bd11438ae3e1bda0
+  docVersion: 1.0.0
+  speakeasyVersion: 1.59.0
+  generationVersion: 2.65.0
 generation:
   comments:
     disableComments: false
@@ -8,6 +13,6 @@ generation:
   singleTagPerOp: false
   tagNamespacingDisabled: false
 go:
-  version: 0.0.1
+  version: 1.0.0
   maxMethodParams: 0
   packageName: github.com/speakeasy-sdks/zd-zis-registry-test
