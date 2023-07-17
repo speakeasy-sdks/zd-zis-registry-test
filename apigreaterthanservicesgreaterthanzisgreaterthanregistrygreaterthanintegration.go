@@ -7,6 +7,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/operations"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/utils"
 	"io"
 	"net/http"
@@ -98,6 +99,8 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanInteg
 			}
 
 			res.PostAPIServicesZisRegistryIntegration200ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 400:
 		res.Headers = httpRes.Header
@@ -110,6 +113,8 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanInteg
 			}
 
 			res.PostAPIServicesZisRegistryIntegration400ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 401:
 		res.Headers = httpRes.Header
@@ -122,6 +127,8 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanInteg
 			}
 
 			res.PostAPIServicesZisRegistryIntegration401ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	case httpRes.StatusCode == 500:
 		res.Headers = httpRes.Header
@@ -134,6 +141,8 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanInteg
 			}
 
 			res.PostAPIServicesZisRegistryIntegration500ApplicationJSONObject = out
+		default:
+			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
 	}
 
