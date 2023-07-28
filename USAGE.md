@@ -13,14 +13,15 @@ import(
 
 func main() {
     s := zendeskzisregistry.New()
+    operationSecurity := operations.DeleteAPIServicesZisRegistryJobSpecsInstallSecurity{
+            Password: "",
+            Username: "",
+        }
 
     ctx := context.Background()
     res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{
         JobSpecName: zendeskzisregistry.String("corrupti"),
-    }, operations.DeleteAPIServicesZisRegistryJobSpecsInstallSecurity{
-        Password: "",
-        Username: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }

@@ -46,7 +46,7 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "application/json;q=1, application/json;q=0.8, application/json;q=0.6, application/json;q=0.4, text/plain;q=0")
+	req.Header.Set("Accept", "application/json;q=1, text/plain;q=0")
 	req.Header.Set("user-agent", fmt.Sprintf("speakeasy-sdk/%s %s %s %s", s.sdkConfiguration.Language, s.sdkConfiguration.SDKVersion, s.sdkConfiguration.GenVersion, s.sdkConfiguration.OpenAPIDocVersion))
 
 	utils.PopulateHeaders(ctx, req, request)
@@ -171,7 +171,7 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
-	req.Header.Set("Accept", "application/json;q=1, application/json;q=0.8, application/json;q=0.5, text/plain;q=0")
+	req.Header.Set("Accept", "application/json;q=1, text/plain;q=0")
 	req.Header.Set("user-agent", fmt.Sprintf("speakeasy-sdk/%s %s %s %s", s.sdkConfiguration.Language, s.sdkConfiguration.SDKVersion, s.sdkConfiguration.GenVersion, s.sdkConfiguration.OpenAPIDocVersion))
 
 	utils.PopulateHeaders(ctx, req, request)

@@ -11,9 +11,30 @@ type DeleteAPIServicesZisRegistryJobSpecsInstallSecurity struct {
 	Username string `security:"scheme,type=http,subtype=basic,name=username"`
 }
 
+func (o *DeleteAPIServicesZisRegistryJobSpecsInstallSecurity) GetPassword() string {
+	if o == nil {
+		return ""
+	}
+	return o.Password
+}
+
+func (o *DeleteAPIServicesZisRegistryJobSpecsInstallSecurity) GetUsername() string {
+	if o == nil {
+		return ""
+	}
+	return o.Username
+}
+
 type DeleteAPIServicesZisRegistryJobSpecsInstallRequest struct {
 	// (Required) The name of the job spec
 	JobSpecName *string `queryParam:"style=form,explode=true,name=job_spec_name"`
+}
+
+func (o *DeleteAPIServicesZisRegistryJobSpecsInstallRequest) GetJobSpecName() *string {
+	if o == nil {
+		return nil
+	}
+	return o.JobSpecName
 }
 
 // DeleteAPIServicesZisRegistryJobSpecsInstall500ApplicationJSON - Internal Server Error
@@ -47,4 +68,67 @@ type DeleteAPIServicesZisRegistryJobSpecsInstallResponse struct {
 	DeleteAPIServicesZisRegistryJobSpecsInstall404ApplicationJSONObject *DeleteAPIServicesZisRegistryJobSpecsInstall404ApplicationJSON
 	// Internal Server Error
 	DeleteAPIServicesZisRegistryJobSpecsInstall500ApplicationJSONObject *DeleteAPIServicesZisRegistryJobSpecsInstall500ApplicationJSON
+}
+
+func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetHeaders() map[string][]string {
+	if o == nil {
+		return nil
+	}
+	return o.Headers
+}
+
+func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetDeleteAPIServicesZisRegistryJobSpecsInstall204TextPlainString() *string {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteAPIServicesZisRegistryJobSpecsInstall204TextPlainString
+}
+
+func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetDeleteAPIServicesZisRegistryJobSpecsInstall400ApplicationJSONObject() *DeleteAPIServicesZisRegistryJobSpecsInstall400ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteAPIServicesZisRegistryJobSpecsInstall400ApplicationJSONObject
+}
+
+func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetDeleteAPIServicesZisRegistryJobSpecsInstall401ApplicationJSONObject() *DeleteAPIServicesZisRegistryJobSpecsInstall401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteAPIServicesZisRegistryJobSpecsInstall401ApplicationJSONObject
+}
+
+func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetDeleteAPIServicesZisRegistryJobSpecsInstall404ApplicationJSONObject() *DeleteAPIServicesZisRegistryJobSpecsInstall404ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteAPIServicesZisRegistryJobSpecsInstall404ApplicationJSONObject
+}
+
+func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetDeleteAPIServicesZisRegistryJobSpecsInstall500ApplicationJSONObject() *DeleteAPIServicesZisRegistryJobSpecsInstall500ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteAPIServicesZisRegistryJobSpecsInstall500ApplicationJSONObject
 }

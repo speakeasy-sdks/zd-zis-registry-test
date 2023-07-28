@@ -35,14 +35,15 @@ import(
 
 func main() {
     s := zendeskzisregistry.New()
+    operationSecurity := operations.DeleteAPIServicesZisRegistryJobSpecsInstallSecurity{
+            Password: "",
+            Username: "",
+        }
 
     ctx := context.Background()
     res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{
         JobSpecName: zendeskzisregistry.String("provident"),
-    }, operations.DeleteAPIServicesZisRegistryJobSpecsInstallSecurity{
-        Password: "",
-        Username: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -97,14 +98,15 @@ import(
 
 func main() {
     s := zendeskzisregistry.New()
+    operationSecurity := operations.PostAPIServicesZisRegistryJobSpecsInstallSecurity{
+            Password: "",
+            Username: "",
+        }
 
     ctx := context.Background()
     res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.PostAPIServicesZisRegistryJobSpecsInstall(ctx, operations.PostAPIServicesZisRegistryJobSpecsInstallRequest{
         JobSpecName: zendeskzisregistry.String("distinctio"),
-    }, operations.PostAPIServicesZisRegistryJobSpecsInstallSecurity{
-        Password: "",
-        Username: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }

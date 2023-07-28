@@ -37,15 +37,16 @@ import(
 
 func main() {
     s := zendeskzisregistry.New()
+    operationSecurity := operations.PostAPIServicesZisRegistryIntegrationSecurity{
+            Password: "",
+            Username: "",
+        }
 
     ctx := context.Background()
     res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration.PostAPIServicesZisRegistryIntegration(ctx, operations.PostAPIServicesZisRegistryIntegrationRequest{
         RequestBody: &operations.PostAPIServicesZisRegistryIntegrationRequestBody{},
         Integration: "quibusdam",
-    }, operations.PostAPIServicesZisRegistryIntegrationSecurity{
-        Password: "",
-        Username: "",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }

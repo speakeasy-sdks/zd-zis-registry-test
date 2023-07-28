@@ -11,12 +11,40 @@ type PostAPIServicesZisRegistryIntegrationBundlesSecurity struct {
 	Username string `security:"scheme,type=http,subtype=basic,name=username"`
 }
 
+func (o *PostAPIServicesZisRegistryIntegrationBundlesSecurity) GetPassword() string {
+	if o == nil {
+		return ""
+	}
+	return o.Password
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationBundlesSecurity) GetUsername() string {
+	if o == nil {
+		return ""
+	}
+	return o.Username
+}
+
 type PostAPIServicesZisRegistryIntegrationBundlesRequestBody struct {
 }
 
 type PostAPIServicesZisRegistryIntegrationBundlesRequest struct {
 	RequestBody *PostAPIServicesZisRegistryIntegrationBundlesRequestBody `request:"mediaType=application/json"`
 	Integration string                                                   `pathParam:"style=simple,explode=false,name=integration"`
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationBundlesRequest) GetRequestBody() *PostAPIServicesZisRegistryIntegrationBundlesRequestBody {
+	if o == nil {
+		return nil
+	}
+	return o.RequestBody
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationBundlesRequest) GetIntegration() string {
+	if o == nil {
+		return ""
+	}
+	return o.Integration
 }
 
 // PostAPIServicesZisRegistryIntegrationBundles500ApplicationJSON - Internal Server Error
@@ -44,4 +72,60 @@ type PostAPIServicesZisRegistryIntegrationBundlesResponse struct {
 	PostAPIServicesZisRegistryIntegrationBundles401ApplicationJSONObject *PostAPIServicesZisRegistryIntegrationBundles401ApplicationJSON
 	// Internal Server Error
 	PostAPIServicesZisRegistryIntegrationBundles500ApplicationJSONObject *PostAPIServicesZisRegistryIntegrationBundles500ApplicationJSON
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetHeaders() map[string][]string {
+	if o == nil {
+		return nil
+	}
+	return o.Headers
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetPostAPIServicesZisRegistryIntegrationBundles200TextPlainString() *string {
+	if o == nil {
+		return nil
+	}
+	return o.PostAPIServicesZisRegistryIntegrationBundles200TextPlainString
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetPostAPIServicesZisRegistryIntegrationBundles400ApplicationJSONObject() *PostAPIServicesZisRegistryIntegrationBundles400ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.PostAPIServicesZisRegistryIntegrationBundles400ApplicationJSONObject
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetPostAPIServicesZisRegistryIntegrationBundles401ApplicationJSONObject() *PostAPIServicesZisRegistryIntegrationBundles401ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.PostAPIServicesZisRegistryIntegrationBundles401ApplicationJSONObject
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetPostAPIServicesZisRegistryIntegrationBundles500ApplicationJSONObject() *PostAPIServicesZisRegistryIntegrationBundles500ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.PostAPIServicesZisRegistryIntegrationBundles500ApplicationJSONObject
 }

@@ -110,8 +110,8 @@ func New(opts ...SDKOption) *ZendeskZisRegistry {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "1.1.0",
-			GenVersion:        "2.66.0",
+			SDKVersion:        "1.2.0",
+			GenVersion:        "2.75.1",
 		},
 	}
 	for _, opt := range opts {
