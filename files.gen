@@ -54,3 +54,5 @@ docs/models/operations/postapiserviceszisregistryintegrationbundles500applicatio
 docs/models/operations/postapiserviceszisregistryintegrationbundles401applicationjson.md
 docs/models/operations/postapiserviceszisregistryintegrationbundles400applicationjson.md
 docs/models/operations/postapiserviceszisregistryintegrationbundlesresponse.md
+pkg/models/operations/options.go
+.gitattributes
