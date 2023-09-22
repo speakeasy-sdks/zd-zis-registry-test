@@ -31,12 +31,12 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/zd-zis-registry-test"
+	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test"
 	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/operations"
 )
 
 func main() {
-    s := zendeskzisregistry.New()
+    s := zdzisregistrytest.New()
     operationSecurity := operations.PostAPIServicesZisRegistryIntegrationSecurity{
             Password: "",
             Username: "",
@@ -45,7 +45,7 @@ func main() {
     ctx := context.Background()
     res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration.PostAPIServicesZisRegistryIntegration(ctx, operations.PostAPIServicesZisRegistryIntegrationRequest{
         RequestBody: &operations.PostAPIServicesZisRegistryIntegrationRequestBody{},
-        Integration: "quibusdam",
+        Integration: "unde",
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)

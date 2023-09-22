@@ -7,21 +7,23 @@ package main
 import(
 	"context"
 	"log"
-	"github.com/speakeasy-sdks/zd-zis-registry-test"
+	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/shared"
 	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/operations"
 )
 
 func main() {
-    s := zendeskzisregistry.New()
-    operationSecurity := operations.DeleteAPIServicesZisRegistryJobSpecsInstallSecurity{
+    s := zdzisregistrytest.New(
+        zdzisregistrytest.WithSecurity(shared.Security{
             Password: "",
             Username: "",
-        }
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{
-        JobSpecName: zendeskzisregistry.String("corrupti"),
-    }, operationSecurity)
+        JobSpecName: zdzisregistrytest.String("corrupti"),
+    })
     if err != nil {
         log.Fatal(err)
     }
