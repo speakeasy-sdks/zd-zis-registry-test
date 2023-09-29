@@ -1,4 +1,5 @@
 # APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall
+(*APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall*)
 
 ### Available Operations
 
@@ -44,7 +45,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{
-        JobSpecName: zdzisregistrytest.String("distinctio"),
+        JobSpecName: zdzisregistrytest.String("Table"),
     })
     if err != nil {
         log.Fatal(err)
@@ -108,7 +109,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.PostAPIServicesZisRegistryJobSpecsInstall(ctx, operations.PostAPIServicesZisRegistryJobSpecsInstallRequest{
-        JobSpecName: zdzisregistrytest.String("quibusdam"),
+        JobSpecName: zdzisregistrytest.String("grey"),
     })
     if err != nil {
         log.Fatal(err)

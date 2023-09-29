@@ -22,7 +22,7 @@ func main() {
 
     ctx := context.Background()
     res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{
-        JobSpecName: zdzisregistrytest.String("corrupti"),
+        JobSpecName: zdzisregistrytest.String("Table"),
     })
     if err != nil {
         log.Fatal(err)

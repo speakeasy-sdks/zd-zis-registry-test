@@ -62,7 +62,7 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 		req.Header.Set("Accept", "application/json;q=1, text/plain;q=0")
 	}
 
-	req.Header.Set("user-agent", fmt.Sprintf("speakeasy-sdk/%s %s %s %s", s.sdkConfiguration.Language, s.sdkConfiguration.SDKVersion, s.sdkConfiguration.GenVersion, s.sdkConfiguration.OpenAPIDocVersion))
+	req.Header.Set("user-agent", s.sdkConfiguration.UserAgent)
 
 	utils.PopulateHeaders(ctx, req, request)
 
@@ -202,7 +202,7 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 		req.Header.Set("Accept", "application/json;q=1, text/plain;q=0")
 	}
 
-	req.Header.Set("user-agent", fmt.Sprintf("speakeasy-sdk/%s %s %s %s", s.sdkConfiguration.Language, s.sdkConfiguration.SDKVersion, s.sdkConfiguration.GenVersion, s.sdkConfiguration.OpenAPIDocVersion))
+	req.Header.Set("user-agent", s.sdkConfiguration.UserAgent)
 
 	utils.PopulateHeaders(ctx, req, request)
 

@@ -1,4 +1,5 @@
 # APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegrationGreaterThanBundles
+(*APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegrationGreaterThanBundles*)
 
 ### Available Operations
 
@@ -45,7 +46,7 @@ func main() {
     ctx := context.Background()
     res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegrationGreaterThanBundles.PostAPIServicesZisRegistryIntegrationBundles(ctx, operations.PostAPIServicesZisRegistryIntegrationBundlesRequest{
         RequestBody: &operations.PostAPIServicesZisRegistryIntegrationBundlesRequestBody{},
-        Integration: "nulla",
+        Integration: "Bicycle District Borders",
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)

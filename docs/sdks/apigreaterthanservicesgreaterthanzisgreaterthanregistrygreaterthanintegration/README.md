@@ -1,4 +1,5 @@
 # APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration
+(*APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration*)
 
 ### Available Operations
 
@@ -45,7 +46,7 @@ func main() {
     ctx := context.Background()
     res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration.PostAPIServicesZisRegistryIntegration(ctx, operations.PostAPIServicesZisRegistryIntegrationRequest{
         RequestBody: &operations.PostAPIServicesZisRegistryIntegrationRequestBody{},
-        Integration: "unde",
+        Integration: "coulomb green",
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)
