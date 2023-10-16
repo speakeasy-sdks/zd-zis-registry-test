@@ -40,7 +40,7 @@ func newAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegr
 // its job spec. See the [Uninstall
 // Job Spec](/api-reference/integration-services/registry/jobspecs/#uninstall-job-spec)
 // endpoint.
-func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration) PostAPIServicesZisRegistryIntegration(ctx context.Context, request operations.PostAPIServicesZisRegistryIntegrationRequest, security operations.PostAPIServicesZisRegistryIntegrationSecurity) (*operations.PostAPIServicesZisRegistryIntegrationResponse, error) {
+func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration) PostAPIServicesZisRegistryIntegration(ctx context.Context, request operations.PostAPIServicesZisRegistryIntegrationRequest) (*operations.PostAPIServicesZisRegistryIntegrationResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/services/zis/registry/{integration}", request, nil)
 	if err != nil {
@@ -63,7 +63,7 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanInteg
 
 	utils.PopulateHeaders(ctx, req, request)
 
-	client := utils.ConfigureSecurityClient(s.sdkConfiguration.DefaultClient, withSecurity(security))
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil {
