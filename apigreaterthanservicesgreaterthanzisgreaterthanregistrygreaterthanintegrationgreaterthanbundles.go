@@ -40,7 +40,7 @@ func newAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegr
 // job spec. See the [Uninstall
 // Job Spec](/api-reference/integration-services/registry/jobspecs/#uninstall-job-spec)
 // endpoint.
-func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegrationGreaterThanBundles) PostAPIServicesZisRegistryIntegrationBundles(ctx context.Context, request operations.PostAPIServicesZisRegistryIntegrationBundlesRequest, opts ...operations.Option) (*operations.PostAPIServicesZisRegistryIntegrationBundlesResponse, error) {
+func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegrationGreaterThanBundles) PostAPIServicesZisRegistryIntegrationBundles(ctx context.Context, request operations.PostAPIServicesZisRegistryIntegrationBundlesRequest, security operations.PostAPIServicesZisRegistryIntegrationBundlesSecurity, opts ...operations.Option) (*operations.PostAPIServicesZisRegistryIntegrationBundlesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -78,7 +78,7 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanInteg
 
 	utils.PopulateHeaders(ctx, req, request)
 
-	client := s.sdkConfiguration.SecurityClient
+	client := utils.ConfigureSecurityClient(s.sdkConfiguration.DefaultClient, withSecurity(security))
 
 	httpRes, err := client.Do(req)
 	if err != nil {

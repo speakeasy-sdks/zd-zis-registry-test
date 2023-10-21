@@ -38,7 +38,7 @@ func newAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpe
 // #### Allowed for
 //
 // * Admins
-func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall) DeleteAPIServicesZisRegistryJobSpecsInstall(ctx context.Context, request operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest, security operations.DeleteAPIServicesZisRegistryJobSpecsInstallSecurity, opts ...operations.Option) (*operations.DeleteAPIServicesZisRegistryJobSpecsInstallResponse, error) {
+func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall) DeleteAPIServicesZisRegistryJobSpecsInstall(ctx context.Context, request operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest, opts ...operations.Option) (*operations.DeleteAPIServicesZisRegistryJobSpecsInstallResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -70,7 +70,7 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := utils.ConfigureSecurityClient(s.sdkConfiguration.DefaultClient, withSecurity(security))
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil {
@@ -178,7 +178,7 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 // #### Allowed for
 //
 // * Admins
-func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall) PostAPIServicesZisRegistryJobSpecsInstall(ctx context.Context, request operations.PostAPIServicesZisRegistryJobSpecsInstallRequest, security operations.PostAPIServicesZisRegistryJobSpecsInstallSecurity, opts ...operations.Option) (*operations.PostAPIServicesZisRegistryJobSpecsInstallResponse, error) {
+func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall) PostAPIServicesZisRegistryJobSpecsInstall(ctx context.Context, request operations.PostAPIServicesZisRegistryJobSpecsInstallRequest, opts ...operations.Option) (*operations.PostAPIServicesZisRegistryJobSpecsInstallResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -210,7 +210,7 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := utils.ConfigureSecurityClient(s.sdkConfiguration.DefaultClient, withSecurity(security))
+	client := s.sdkConfiguration.SecurityClient
 
 	httpRes, err := client.Do(req)
 	if err != nil {
