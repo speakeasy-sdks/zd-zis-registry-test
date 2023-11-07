@@ -4,7 +4,7 @@ package operations
 
 import (
 	"errors"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/utils"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/utils"
 )
 
 var ErrUnsupportedOption = errors.New("unsupported option")

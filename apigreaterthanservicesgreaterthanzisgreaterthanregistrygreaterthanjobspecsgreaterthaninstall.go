@@ -6,20 +6,20 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/operations"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/sdkerrors"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/utils"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/sdkerrors"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/utils"
 	"io"
 	"net/http"
 	"strings"
 )
 
-type apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall struct {
+type APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall(sdkConfig sdkConfiguration) *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall {
-	return &apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall{
+func newAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall(sdkConfig sdkConfiguration) *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall {
+	return &APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -38,7 +38,7 @@ func newAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpe
 // #### Allowed for
 //
 // * Admins
-func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall) DeleteAPIServicesZisRegistryJobSpecsInstall(ctx context.Context, request operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest, opts ...operations.Option) (*operations.DeleteAPIServicesZisRegistryJobSpecsInstallResponse, error) {
+func (s *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall) DeleteAPIServicesZisRegistryJobSpecsInstall(ctx context.Context, request operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest, opts ...operations.Option) (*operations.DeleteAPIServicesZisRegistryJobSpecsInstallResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -99,7 +99,7 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 		switch {
 		case utils.MatchContentType(contentType, `text/plain`):
 			out := string(rawBody)
-			res.DeleteAPIServicesZisRegistryJobSpecsInstall204TextPlainString = &out
+			res.TwoHundredAndFourTextPlainRes = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -108,12 +108,13 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.DeleteAPIServicesZisRegistryJobSpecsInstall400ApplicationJSON
+			var out sdkerrors.DeleteAPIServicesZisRegistryJobSpecsInstallResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
+			out.RawResponse = httpRes
 
-			res.DeleteAPIServicesZisRegistryJobSpecsInstall400ApplicationJSONObject = &out
+			return nil, &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -122,12 +123,13 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.DeleteAPIServicesZisRegistryJobSpecsInstall401ApplicationJSON
+			var out sdkerrors.DeleteAPIServicesZisRegistryJobSpecsInstallAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstallResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
+			out.RawResponse = httpRes
 
-			res.DeleteAPIServicesZisRegistryJobSpecsInstall401ApplicationJSONObject = &out
+			return nil, &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -136,26 +138,32 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.DeleteAPIServicesZisRegistryJobSpecsInstall404ApplicationJSON
+			var out sdkerrors.DeleteAPIServicesZisRegistryJobSpecsInstallAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstallResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
+			out.RawResponse = httpRes
 
-			res.DeleteAPIServicesZisRegistryJobSpecsInstall404ApplicationJSONObject = &out
+			return nil, &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode == 500:
 		res.Headers = httpRes.Header
 
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.DeleteAPIServicesZisRegistryJobSpecsInstall500ApplicationJSON
+			var out sdkerrors.DeleteAPIServicesZisRegistryJobSpecsInstallAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstallResponse500ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
+			out.RawResponse = httpRes
 
-			res.DeleteAPIServicesZisRegistryJobSpecsInstall500ApplicationJSONObject = &out
+			return nil, &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -178,7 +186,7 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 // #### Allowed for
 //
 // * Admins
-func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall) PostAPIServicesZisRegistryJobSpecsInstall(ctx context.Context, request operations.PostAPIServicesZisRegistryJobSpecsInstallRequest, opts ...operations.Option) (*operations.PostAPIServicesZisRegistryJobSpecsInstallResponse, error) {
+func (s *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall) PostAPIServicesZisRegistryJobSpecsInstall(ctx context.Context, request operations.PostAPIServicesZisRegistryJobSpecsInstallRequest, opts ...operations.Option) (*operations.PostAPIServicesZisRegistryJobSpecsInstallResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -241,7 +249,7 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 		switch {
 		case utils.MatchContentType(contentType, `text/plain`):
 			out := string(rawBody)
-			res.PostAPIServicesZisRegistryJobSpecsInstall200TextPlainString = &out
+			res.TwoHundredTextPlainRes = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -250,12 +258,13 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.PostAPIServicesZisRegistryJobSpecsInstall400ApplicationJSON
+			var out sdkerrors.PostAPIServicesZisRegistryJobSpecsInstallResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
+			out.RawResponse = httpRes
 
-			res.PostAPIServicesZisRegistryJobSpecsInstall400ApplicationJSONObject = &out
+			return nil, &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -264,26 +273,32 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.PostAPIServicesZisRegistryJobSpecsInstall401ApplicationJSON
+			var out sdkerrors.PostAPIServicesZisRegistryJobSpecsInstallAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstallResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
+			out.RawResponse = httpRes
 
-			res.PostAPIServicesZisRegistryJobSpecsInstall401ApplicationJSONObject = &out
+			return nil, &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode == 500:
 		res.Headers = httpRes.Header
 
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.PostAPIServicesZisRegistryJobSpecsInstall500ApplicationJSON
+			var out sdkerrors.PostAPIServicesZisRegistryJobSpecsInstallAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstallResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
+			out.RawResponse = httpRes
 
-			res.PostAPIServicesZisRegistryJobSpecsInstall500ApplicationJSONObject = &out
+			return nil, &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

@@ -6,9 +6,9 @@ package main
 
 import (
 	"context"
-	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/operations"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/shared"
+	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/shared"
 	"log"
 )
 
@@ -26,7 +26,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if res.DeleteAPIServicesZisRegistryJobSpecsInstall204TextPlainString != nil {
+	if res.TwoHundredAndFourTextPlainRes != nil {
 		// handle response
 	}
 }

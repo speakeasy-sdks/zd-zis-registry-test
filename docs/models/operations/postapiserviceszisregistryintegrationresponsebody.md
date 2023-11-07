@@ -1,6 +1,6 @@
-# DeleteAPIServicesZisRegistryJobSpecsInstall500ApplicationJSON
+# PostAPIServicesZisRegistryIntegrationResponseBody
 
-Internal Server Error
+OK
 
 
 ## Fields

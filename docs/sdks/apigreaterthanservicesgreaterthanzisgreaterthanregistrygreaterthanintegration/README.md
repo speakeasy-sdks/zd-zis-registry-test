@@ -1,5 +1,5 @@
 # APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration
-(*APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration*)
+(*.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration*)
 
 ### Available Operations
 
@@ -32,8 +32,8 @@ package main
 import(
 	"context"
 	"log"
-	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/operations"
+	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
 )
 
 func main() {
@@ -54,7 +54,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PostAPIServicesZisRegistryIntegration200ApplicationJSONObject != nil {
+    if res.TwoHundredApplicationJSONObject != nil {
         // handle response
     }
 }

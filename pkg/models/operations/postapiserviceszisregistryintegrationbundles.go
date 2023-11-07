@@ -47,19 +47,9 @@ func (o *PostAPIServicesZisRegistryIntegrationBundlesRequest) GetIntegration() s
 	return o.Integration
 }
 
-// PostAPIServicesZisRegistryIntegrationBundles500ApplicationJSON - Internal Server Error
-type PostAPIServicesZisRegistryIntegrationBundles500ApplicationJSON struct {
-}
-
-// PostAPIServicesZisRegistryIntegrationBundles401ApplicationJSON - Unauthorized
-type PostAPIServicesZisRegistryIntegrationBundles401ApplicationJSON struct {
-}
-
-// PostAPIServicesZisRegistryIntegrationBundles400ApplicationJSON - Bad Request
-type PostAPIServicesZisRegistryIntegrationBundles400ApplicationJSON struct {
-}
-
 type PostAPIServicesZisRegistryIntegrationBundlesResponse struct {
+	// OK
+	TwoHundredTextPlainRes *string
 	// HTTP response content type for this operation
 	ContentType string
 	Headers     map[string][]string
@@ -67,14 +57,13 @@ type PostAPIServicesZisRegistryIntegrationBundlesResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	PostAPIServicesZisRegistryIntegrationBundles200TextPlainString *string
-	// Bad Request
-	PostAPIServicesZisRegistryIntegrationBundles400ApplicationJSONObject *PostAPIServicesZisRegistryIntegrationBundles400ApplicationJSON
-	// Unauthorized
-	PostAPIServicesZisRegistryIntegrationBundles401ApplicationJSONObject *PostAPIServicesZisRegistryIntegrationBundles401ApplicationJSON
-	// Internal Server Error
-	PostAPIServicesZisRegistryIntegrationBundles500ApplicationJSONObject *PostAPIServicesZisRegistryIntegrationBundles500ApplicationJSON
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetTwoHundredTextPlainRes() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredTextPlainRes
 }
 
 func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetContentType() string {
@@ -103,32 +92,4 @@ func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetRawResponse() 
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetPostAPIServicesZisRegistryIntegrationBundles200TextPlainString() *string {
-	if o == nil {
-		return nil
-	}
-	return o.PostAPIServicesZisRegistryIntegrationBundles200TextPlainString
-}
-
-func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetPostAPIServicesZisRegistryIntegrationBundles400ApplicationJSONObject() *PostAPIServicesZisRegistryIntegrationBundles400ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.PostAPIServicesZisRegistryIntegrationBundles400ApplicationJSONObject
-}
-
-func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetPostAPIServicesZisRegistryIntegrationBundles401ApplicationJSONObject() *PostAPIServicesZisRegistryIntegrationBundles401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.PostAPIServicesZisRegistryIntegrationBundles401ApplicationJSONObject
-}
-
-func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetPostAPIServicesZisRegistryIntegrationBundles500ApplicationJSONObject() *PostAPIServicesZisRegistryIntegrationBundles500ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.PostAPIServicesZisRegistryIntegrationBundles500ApplicationJSONObject
 }

@@ -18,19 +18,9 @@ func (o *PostAPIServicesZisRegistryJobSpecsInstallRequest) GetJobSpecName() *str
 	return o.JobSpecName
 }
 
-// PostAPIServicesZisRegistryJobSpecsInstall500ApplicationJSON - Internal Server Error
-type PostAPIServicesZisRegistryJobSpecsInstall500ApplicationJSON struct {
-}
-
-// PostAPIServicesZisRegistryJobSpecsInstall401ApplicationJSON - Unauthorized
-type PostAPIServicesZisRegistryJobSpecsInstall401ApplicationJSON struct {
-}
-
-// PostAPIServicesZisRegistryJobSpecsInstall400ApplicationJSON - Bad Request
-type PostAPIServicesZisRegistryJobSpecsInstall400ApplicationJSON struct {
-}
-
 type PostAPIServicesZisRegistryJobSpecsInstallResponse struct {
+	// OK
+	TwoHundredTextPlainRes *string
 	// HTTP response content type for this operation
 	ContentType string
 	Headers     map[string][]string
@@ -38,14 +28,13 @@ type PostAPIServicesZisRegistryJobSpecsInstallResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	PostAPIServicesZisRegistryJobSpecsInstall200TextPlainString *string
-	// Bad Request
-	PostAPIServicesZisRegistryJobSpecsInstall400ApplicationJSONObject *PostAPIServicesZisRegistryJobSpecsInstall400ApplicationJSON
-	// Unauthorized
-	PostAPIServicesZisRegistryJobSpecsInstall401ApplicationJSONObject *PostAPIServicesZisRegistryJobSpecsInstall401ApplicationJSON
-	// Internal Server Error
-	PostAPIServicesZisRegistryJobSpecsInstall500ApplicationJSONObject *PostAPIServicesZisRegistryJobSpecsInstall500ApplicationJSON
+}
+
+func (o *PostAPIServicesZisRegistryJobSpecsInstallResponse) GetTwoHundredTextPlainRes() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredTextPlainRes
 }
 
 func (o *PostAPIServicesZisRegistryJobSpecsInstallResponse) GetContentType() string {
@@ -74,32 +63,4 @@ func (o *PostAPIServicesZisRegistryJobSpecsInstallResponse) GetRawResponse() *ht
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *PostAPIServicesZisRegistryJobSpecsInstallResponse) GetPostAPIServicesZisRegistryJobSpecsInstall200TextPlainString() *string {
-	if o == nil {
-		return nil
-	}
-	return o.PostAPIServicesZisRegistryJobSpecsInstall200TextPlainString
-}
-
-func (o *PostAPIServicesZisRegistryJobSpecsInstallResponse) GetPostAPIServicesZisRegistryJobSpecsInstall400ApplicationJSONObject() *PostAPIServicesZisRegistryJobSpecsInstall400ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.PostAPIServicesZisRegistryJobSpecsInstall400ApplicationJSONObject
-}
-
-func (o *PostAPIServicesZisRegistryJobSpecsInstallResponse) GetPostAPIServicesZisRegistryJobSpecsInstall401ApplicationJSONObject() *PostAPIServicesZisRegistryJobSpecsInstall401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.PostAPIServicesZisRegistryJobSpecsInstall401ApplicationJSONObject
-}
-
-func (o *PostAPIServicesZisRegistryJobSpecsInstallResponse) GetPostAPIServicesZisRegistryJobSpecsInstall500ApplicationJSONObject() *PostAPIServicesZisRegistryJobSpecsInstall500ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.PostAPIServicesZisRegistryJobSpecsInstall500ApplicationJSONObject
 }

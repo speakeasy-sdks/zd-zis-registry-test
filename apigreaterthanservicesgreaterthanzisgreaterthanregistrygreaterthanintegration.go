@@ -6,19 +6,19 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/operations"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/sdkerrors"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/utils"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/sdkerrors"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/utils"
 	"io"
 	"net/http"
 )
 
-type apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration struct {
+type APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration(sdkConfig sdkConfiguration) *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration {
-	return &apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration{
+func newAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration(sdkConfig sdkConfiguration) *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration {
+	return &APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -40,7 +40,7 @@ func newAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegr
 // its job spec. See the [Uninstall
 // Job Spec](/api-reference/integration-services/registry/jobspecs/#uninstall-job-spec)
 // endpoint.
-func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration) PostAPIServicesZisRegistryIntegration(ctx context.Context, request operations.PostAPIServicesZisRegistryIntegrationRequest, security operations.PostAPIServicesZisRegistryIntegrationSecurity) (*operations.PostAPIServicesZisRegistryIntegrationResponse, error) {
+func (s *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration) PostAPIServicesZisRegistryIntegration(ctx context.Context, request operations.PostAPIServicesZisRegistryIntegrationRequest, security operations.PostAPIServicesZisRegistryIntegrationSecurity) (*operations.PostAPIServicesZisRegistryIntegrationResponse, error) {
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
 	url, err := utils.GenerateURL(ctx, baseURL, "/api/services/zis/registry/{integration}", request, nil)
 	if err != nil {
@@ -93,12 +93,12 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanInteg
 
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.PostAPIServicesZisRegistryIntegration200ApplicationJSON
+			var out operations.PostAPIServicesZisRegistryIntegrationResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.PostAPIServicesZisRegistryIntegration200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -107,12 +107,13 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanInteg
 
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.PostAPIServicesZisRegistryIntegration400ApplicationJSON
+			var out sdkerrors.PostAPIServicesZisRegistryIntegrationResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
+			out.RawResponse = httpRes
 
-			res.PostAPIServicesZisRegistryIntegration400ApplicationJSONObject = &out
+			return nil, &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -121,26 +122,32 @@ func (s *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanInteg
 
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.PostAPIServicesZisRegistryIntegration401ApplicationJSON
+			var out sdkerrors.PostAPIServicesZisRegistryIntegrationAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegrationResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
+			out.RawResponse = httpRes
 
-			res.PostAPIServicesZisRegistryIntegration401ApplicationJSONObject = &out
+			return nil, &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
+	case httpRes.StatusCode >= 400 && httpRes.StatusCode < 500:
+		fallthrough
+	case httpRes.StatusCode >= 500 && httpRes.StatusCode < 600:
+		return nil, sdkerrors.NewSDKError("API error occurred", httpRes.StatusCode, string(rawBody), httpRes)
 	case httpRes.StatusCode == 500:
 		res.Headers = httpRes.Header
 
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.PostAPIServicesZisRegistryIntegration500ApplicationJSON
+			var out sdkerrors.PostAPIServicesZisRegistryIntegrationAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegrationResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
+			out.RawResponse = httpRes
 
-			res.PostAPIServicesZisRegistryIntegration500ApplicationJSONObject = &out
+			return nil, &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

@@ -5,8 +5,8 @@ package zdzisregistrytest
 import (
 	"context"
 	"fmt"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/shared"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/utils"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/utils"
 	"net/http"
 	"time"
 )
@@ -63,9 +63,9 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 
 // ZendeskZisRegistry - ZIS Registry: The ZIS Registry Service manages ZIS integrations and their bundles. It provides an API to manage your integration, job specs, and bundles.
 type ZendeskZisRegistry struct {
-	APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall    *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall
-	APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration                   *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration
-	APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegrationGreaterThanBundles *apiGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegrationGreaterThanBundles
+	APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall    *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall
+	APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration                   *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration
+	APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegrationGreaterThanBundles *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegrationGreaterThanBundles
 
 	sdkConfiguration sdkConfiguration
 }
@@ -143,9 +143,9 @@ func New(opts ...SDKOption) *ZendeskZisRegistry {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "1.8.0",
-			GenVersion:        "2.169.0",
-			UserAgent:         "speakeasy-sdk/go 1.8.0 2.169.0 1.0.0 github.com/speakeasy-sdks/zd-zis-registry-test",
+			SDKVersion:        "2.0.0",
+			GenVersion:        "2.181.1",
+			UserAgent:         "speakeasy-sdk/go 2.0.0 2.181.1 1.0.0 github.com/speakeasy-sdks/zd-zis-registry-test",
 		},
 	}
 	for _, opt := range opts {

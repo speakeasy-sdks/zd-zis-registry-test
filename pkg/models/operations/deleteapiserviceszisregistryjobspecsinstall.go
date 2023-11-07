@@ -18,23 +18,9 @@ func (o *DeleteAPIServicesZisRegistryJobSpecsInstallRequest) GetJobSpecName() *s
 	return o.JobSpecName
 }
 
-// DeleteAPIServicesZisRegistryJobSpecsInstall500ApplicationJSON - Internal Server Error
-type DeleteAPIServicesZisRegistryJobSpecsInstall500ApplicationJSON struct {
-}
-
-// DeleteAPIServicesZisRegistryJobSpecsInstall404ApplicationJSON - Not Found
-type DeleteAPIServicesZisRegistryJobSpecsInstall404ApplicationJSON struct {
-}
-
-// DeleteAPIServicesZisRegistryJobSpecsInstall401ApplicationJSON - Unauthorized
-type DeleteAPIServicesZisRegistryJobSpecsInstall401ApplicationJSON struct {
-}
-
-// DeleteAPIServicesZisRegistryJobSpecsInstall400ApplicationJSON - Bad Request
-type DeleteAPIServicesZisRegistryJobSpecsInstall400ApplicationJSON struct {
-}
-
 type DeleteAPIServicesZisRegistryJobSpecsInstallResponse struct {
+	// No Content
+	TwoHundredAndFourTextPlainRes *string
 	// HTTP response content type for this operation
 	ContentType string
 	Headers     map[string][]string
@@ -42,16 +28,13 @@ type DeleteAPIServicesZisRegistryJobSpecsInstallResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// No Content
-	DeleteAPIServicesZisRegistryJobSpecsInstall204TextPlainString *string
-	// Bad Request
-	DeleteAPIServicesZisRegistryJobSpecsInstall400ApplicationJSONObject *DeleteAPIServicesZisRegistryJobSpecsInstall400ApplicationJSON
-	// Unauthorized
-	DeleteAPIServicesZisRegistryJobSpecsInstall401ApplicationJSONObject *DeleteAPIServicesZisRegistryJobSpecsInstall401ApplicationJSON
-	// Not Found
-	DeleteAPIServicesZisRegistryJobSpecsInstall404ApplicationJSONObject *DeleteAPIServicesZisRegistryJobSpecsInstall404ApplicationJSON
-	// Internal Server Error
-	DeleteAPIServicesZisRegistryJobSpecsInstall500ApplicationJSONObject *DeleteAPIServicesZisRegistryJobSpecsInstall500ApplicationJSON
+}
+
+func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetTwoHundredAndFourTextPlainRes() *string {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredAndFourTextPlainRes
 }
 
 func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetContentType() string {
@@ -80,39 +63,4 @@ func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetRawResponse() *
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetDeleteAPIServicesZisRegistryJobSpecsInstall204TextPlainString() *string {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteAPIServicesZisRegistryJobSpecsInstall204TextPlainString
-}
-
-func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetDeleteAPIServicesZisRegistryJobSpecsInstall400ApplicationJSONObject() *DeleteAPIServicesZisRegistryJobSpecsInstall400ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteAPIServicesZisRegistryJobSpecsInstall400ApplicationJSONObject
-}
-
-func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetDeleteAPIServicesZisRegistryJobSpecsInstall401ApplicationJSONObject() *DeleteAPIServicesZisRegistryJobSpecsInstall401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteAPIServicesZisRegistryJobSpecsInstall401ApplicationJSONObject
-}
-
-func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetDeleteAPIServicesZisRegistryJobSpecsInstall404ApplicationJSONObject() *DeleteAPIServicesZisRegistryJobSpecsInstall404ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteAPIServicesZisRegistryJobSpecsInstall404ApplicationJSONObject
-}
-
-func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetDeleteAPIServicesZisRegistryJobSpecsInstall500ApplicationJSONObject() *DeleteAPIServicesZisRegistryJobSpecsInstall500ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteAPIServicesZisRegistryJobSpecsInstall500ApplicationJSONObject
 }

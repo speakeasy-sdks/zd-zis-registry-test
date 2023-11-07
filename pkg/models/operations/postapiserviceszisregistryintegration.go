@@ -47,23 +47,13 @@ func (o *PostAPIServicesZisRegistryIntegrationRequest) GetIntegration() string {
 	return o.Integration
 }
 
-// PostAPIServicesZisRegistryIntegration500ApplicationJSON - Internal Server Error
-type PostAPIServicesZisRegistryIntegration500ApplicationJSON struct {
-}
-
-// PostAPIServicesZisRegistryIntegration401ApplicationJSON - Unauthorized
-type PostAPIServicesZisRegistryIntegration401ApplicationJSON struct {
-}
-
-// PostAPIServicesZisRegistryIntegration400ApplicationJSON - Bad Request
-type PostAPIServicesZisRegistryIntegration400ApplicationJSON struct {
-}
-
-// PostAPIServicesZisRegistryIntegration200ApplicationJSON - OK
-type PostAPIServicesZisRegistryIntegration200ApplicationJSON struct {
+// PostAPIServicesZisRegistryIntegrationResponseBody - OK
+type PostAPIServicesZisRegistryIntegrationResponseBody struct {
 }
 
 type PostAPIServicesZisRegistryIntegrationResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *PostAPIServicesZisRegistryIntegrationResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	Headers     map[string][]string
@@ -71,14 +61,13 @@ type PostAPIServicesZisRegistryIntegrationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	PostAPIServicesZisRegistryIntegration200ApplicationJSONObject *PostAPIServicesZisRegistryIntegration200ApplicationJSON
-	// Bad Request
-	PostAPIServicesZisRegistryIntegration400ApplicationJSONObject *PostAPIServicesZisRegistryIntegration400ApplicationJSON
-	// Unauthorized
-	PostAPIServicesZisRegistryIntegration401ApplicationJSONObject *PostAPIServicesZisRegistryIntegration401ApplicationJSON
-	// Internal Server Error
-	PostAPIServicesZisRegistryIntegration500ApplicationJSONObject *PostAPIServicesZisRegistryIntegration500ApplicationJSON
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationResponse) GetTwoHundredApplicationJSONObject() *PostAPIServicesZisRegistryIntegrationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
 }
 
 func (o *PostAPIServicesZisRegistryIntegrationResponse) GetContentType() string {
@@ -107,32 +96,4 @@ func (o *PostAPIServicesZisRegistryIntegrationResponse) GetRawResponse() *http.R
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *PostAPIServicesZisRegistryIntegrationResponse) GetPostAPIServicesZisRegistryIntegration200ApplicationJSONObject() *PostAPIServicesZisRegistryIntegration200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.PostAPIServicesZisRegistryIntegration200ApplicationJSONObject
-}
-
-func (o *PostAPIServicesZisRegistryIntegrationResponse) GetPostAPIServicesZisRegistryIntegration400ApplicationJSONObject() *PostAPIServicesZisRegistryIntegration400ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.PostAPIServicesZisRegistryIntegration400ApplicationJSONObject
-}
-
-func (o *PostAPIServicesZisRegistryIntegrationResponse) GetPostAPIServicesZisRegistryIntegration401ApplicationJSONObject() *PostAPIServicesZisRegistryIntegration401ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.PostAPIServicesZisRegistryIntegration401ApplicationJSONObject
-}
-
-func (o *PostAPIServicesZisRegistryIntegrationResponse) GetPostAPIServicesZisRegistryIntegration500ApplicationJSONObject() *PostAPIServicesZisRegistryIntegration500ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.PostAPIServicesZisRegistryIntegration500ApplicationJSONObject
 }

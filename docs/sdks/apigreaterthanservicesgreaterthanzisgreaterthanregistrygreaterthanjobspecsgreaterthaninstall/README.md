@@ -1,5 +1,5 @@
 # APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall
-(*APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall*)
+(*.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall*)
 
 ### Available Operations
 
@@ -30,9 +30,9 @@ package main
 import(
 	"context"
 	"log"
-	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/shared"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/operations"
+	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
 )
 
 func main() {
@@ -49,7 +49,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.DeleteAPIServicesZisRegistryJobSpecsInstall204TextPlainString != nil {
+    if res.TwoHundredAndFourTextPlainRes != nil {
         // handle response
     }
 }
@@ -92,9 +92,9 @@ package main
 import(
 	"context"
 	"log"
-	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/shared"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/pkg/models/operations"
+	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/shared"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
 )
 
 func main() {
@@ -111,7 +111,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.PostAPIServicesZisRegistryJobSpecsInstall200TextPlainString != nil {
+    if res.TwoHundredTextPlainRes != nil {
         // handle response
     }
 }
