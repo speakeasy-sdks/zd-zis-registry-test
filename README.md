@@ -47,16 +47,16 @@ func main() {
 ## Available Resources and Operations
 
 
-### [.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall](docs/sdks/apigreaterthanservicesgreaterthanzisgreaterthanregistrygreaterthanjobspecsgreaterthaninstall/README.md)
+### [APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall](docs/sdks/apigreaterthanservicesgreaterthanzisgreaterthanregistrygreaterthanjobspecsgreaterthaninstall/README.md)
 
 * [DeleteAPIServicesZisRegistryJobSpecsInstall](docs/sdks/apigreaterthanservicesgreaterthanzisgreaterthanregistrygreaterthanjobspecsgreaterthaninstall/README.md#deleteapiserviceszisregistryjobspecsinstall) - Uninstall Job Spec
 * [PostAPIServicesZisRegistryJobSpecsInstall](docs/sdks/apigreaterthanservicesgreaterthanzisgreaterthanregistrygreaterthanjobspecsgreaterthaninstall/README.md#postapiserviceszisregistryjobspecsinstall) - Install Job Spec
 
-### [.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration](docs/sdks/apigreaterthanservicesgreaterthanzisgreaterthanregistrygreaterthanintegration/README.md)
+### [APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration](docs/sdks/apigreaterthanservicesgreaterthanzisgreaterthanregistrygreaterthanintegration/README.md)
 
 * [PostAPIServicesZisRegistryIntegration](docs/sdks/apigreaterthanservicesgreaterthanzisgreaterthanregistrygreaterthanintegration/README.md#postapiserviceszisregistryintegration) - Create Integration
 
-### [.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegrationGreaterThanBundles](docs/sdks/apigreaterthanservicesgreaterthanzisgreaterthanregistrygreaterthanintegrationgreaterthanbundles/README.md)
+### [APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegrationGreaterThanBundles](docs/sdks/apigreaterthanservicesgreaterthanzisgreaterthanregistrygreaterthanintegrationgreaterthanbundles/README.md)
 
 * [PostAPIServicesZisRegistryIntegrationBundles](docs/sdks/apigreaterthanservicesgreaterthanzisgreaterthanregistrygreaterthanintegrationgreaterthanbundles/README.md#postapiserviceszisregistryintegrationbundles) - Upload or Update Bundle
 <!-- End SDK Available Operations -->
@@ -90,7 +90,15 @@ Here's an example of one such pagination call:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or an error, they will never return both.  When specified by the OpenAPI spec document, the SDK will return the appropriate subclass.
+
+| Error Object                                                                                                                                                             | Status Code                                                                                                                                                              | Content Type                                                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| sdkerrors.DeleteAPIServicesZisRegistryJobSpecsInstallResponseBody                                                                                                        | 400                                                                                                                                                                      | application/json                                                                                                                                                         |
+| sdkerrors.DeleteAPIServicesZisRegistryJobSpecsInstallAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstallResponseBody            | 401                                                                                                                                                                      | application/json                                                                                                                                                         |
+| sdkerrors.DeleteAPIServicesZisRegistryJobSpecsInstallAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstallResponseResponseBody    | 404                                                                                                                                                                      | application/json                                                                                                                                                         |
+| sdkerrors.DeleteAPIServicesZisRegistryJobSpecsInstallAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstallResponse500ResponseBody | 500                                                                                                                                                                      | application/json                                                                                                                                                         |
+| sdkerrors.SDKError                                                                                                                                                       | 400-600                                                                                                                                                                  | */*                                                                                                                                                                      |
 
 
 ## Example
@@ -142,6 +150,11 @@ func main() {
 			log.Fatal(e.Error())
 		}
 
+		var e *sdkerrors.SDKError
+		if errors.As(err, &e) {
+			// handle error
+			log.Fatal(e.Error())
+		}
 	}
 }
 
@@ -269,12 +282,11 @@ This can be a convenient way to configure timeouts, cookies, proxies, custom hea
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security schemes globally:
+This SDK supports the following security schemes globally:
 
 | Name       | Type       | Scheme     |
 | ---------- | ---------- | ---------- |
@@ -317,7 +329,7 @@ func main() {
 
 ## Per-Operation Security Schemes
 
-Some operations in your SDK require the security scheme to be specified at the request level. For example:
+Some operations in this SDK require the security scheme to be specified at the request level. For example:
 
 ```go
 package main
