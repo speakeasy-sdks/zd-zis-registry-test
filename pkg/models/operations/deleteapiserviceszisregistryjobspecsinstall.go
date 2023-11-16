@@ -6,25 +6,6 @@ import (
 	"net/http"
 )
 
-type DeleteAPIServicesZisRegistryJobSpecsInstallSecurity struct {
-	Password string `security:"scheme,type=http,subtype=basic,name=password"`
-	Username string `security:"scheme,type=http,subtype=basic,name=username"`
-}
-
-func (o *DeleteAPIServicesZisRegistryJobSpecsInstallSecurity) GetPassword() string {
-	if o == nil {
-		return ""
-	}
-	return o.Password
-}
-
-func (o *DeleteAPIServicesZisRegistryJobSpecsInstallSecurity) GetUsername() string {
-	if o == nil {
-		return ""
-	}
-	return o.Username
-}
-
 type DeleteAPIServicesZisRegistryJobSpecsInstallRequest struct {
 	// (Required) The name of the job spec
 	JobSpecName *string `queryParam:"style=form,explode=true,name=job_spec_name"`
@@ -65,7 +46,7 @@ func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetContentType() s
 
 func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }

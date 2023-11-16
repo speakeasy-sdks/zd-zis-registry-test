@@ -6,6 +6,25 @@ import (
 	"net/http"
 )
 
+type PostAPIServicesZisRegistryIntegrationBundlesSecurity struct {
+	Password string `security:"scheme,type=http,subtype=basic,name=password"`
+	Username string `security:"scheme,type=http,subtype=basic,name=username"`
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationBundlesSecurity) GetPassword() string {
+	if o == nil {
+		return ""
+	}
+	return o.Password
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationBundlesSecurity) GetUsername() string {
+	if o == nil {
+		return ""
+	}
+	return o.Username
+}
+
 type PostAPIServicesZisRegistryIntegrationBundlesRequestBody struct {
 }
 
@@ -56,7 +75,7 @@ func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetContentType() 
 
 func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }

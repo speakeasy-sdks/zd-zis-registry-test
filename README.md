@@ -19,19 +19,20 @@ import (
 	"context"
 	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
 	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/shared"
 	"log"
 )
 
 func main() {
-	s := zdzisregistrytest.New()
-
-	operationSecurity := operations.DeleteAPIServicesZisRegistryJobSpecsInstallSecurity{
-		Password: "",
-		Username: "",
-	}
+	s := zdzisregistrytest.New(
+		zdzisregistrytest.WithSecurity(shared.Security{
+			Password: "",
+			Username: "",
+		}),
+	)
 
 	ctx := context.Background()
-	res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{}, operationSecurity)
+	res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{})
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -108,21 +109,24 @@ package main
 
 import (
 	"context"
+	"errors"
 	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
 	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/sdkerrors"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/shared"
 	"log"
 )
 
 func main() {
-	s := zdzisregistrytest.New()
-
-	operationSecurity := operations.DeleteAPIServicesZisRegistryJobSpecsInstallSecurity{
-		Password: "",
-		Username: "",
-	}
+	s := zdzisregistrytest.New(
+		zdzisregistrytest.WithSecurity(shared.Security{
+			Password: "",
+			Username: "",
+		}),
+	)
 
 	ctx := context.Background()
-	res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{}, operationSecurity)
+	res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{})
 	if err != nil {
 
 		var e *sdkerrors.DeleteAPIServicesZisRegistryJobSpecsInstallResponseBody
@@ -182,21 +186,21 @@ import (
 	"context"
 	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
 	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/shared"
 	"log"
 )
 
 func main() {
 	s := zdzisregistrytest.New(
 		zdzisregistrytest.WithServerIndex(0),
+		zdzisregistrytest.WithSecurity(shared.Security{
+			Password: "",
+			Username: "",
+		}),
 	)
 
-	operationSecurity := operations.DeleteAPIServicesZisRegistryJobSpecsInstallSecurity{
-		Password: "",
-		Username: "",
-	}
-
 	ctx := context.Background()
-	res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{}, operationSecurity)
+	res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{})
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -219,21 +223,21 @@ import (
 	"context"
 	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
 	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/shared"
 	"log"
 )
 
 func main() {
 	s := zdzisregistrytest.New(
 		zdzisregistrytest.WithServerURL("http://d3v-found1259.zendesk.com"),
+		zdzisregistrytest.WithSecurity(shared.Security{
+			Password: "",
+			Username: "",
+		}),
 	)
 
-	operationSecurity := operations.DeleteAPIServicesZisRegistryJobSpecsInstallSecurity{
-		Password: "",
-		Username: "",
-	}
-
 	ctx := context.Background()
-	res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{}, operationSecurity)
+	res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{})
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -299,19 +303,20 @@ import (
 	"context"
 	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
 	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/shared"
 	"log"
 )
 
 func main() {
-	s := zdzisregistrytest.New()
-
-	operationSecurity := operations.DeleteAPIServicesZisRegistryJobSpecsInstallSecurity{
-		Password: "",
-		Username: "",
-	}
+	s := zdzisregistrytest.New(
+		zdzisregistrytest.WithSecurity(shared.Security{
+			Password: "",
+			Username: "",
+		}),
+	)
 
 	ctx := context.Background()
-	res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{}, operationSecurity)
+	res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{})
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -339,18 +344,21 @@ import (
 func main() {
 	s := zdzisregistrytest.New()
 
-	operationSecurity := operations.DeleteAPIServicesZisRegistryJobSpecsInstallSecurity{
+	operationSecurity := operations.PostAPIServicesZisRegistryIntegrationSecurity{
 		Password: "",
 		Username: "",
 	}
 
 	ctx := context.Background()
-	res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{}, operationSecurity)
+	res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration.PostAPIServicesZisRegistryIntegration(ctx, operations.PostAPIServicesZisRegistryIntegrationRequest{
+		RequestBody: &operations.PostAPIServicesZisRegistryIntegrationRequestBody{},
+		Integration: "string",
+	}, operationSecurity)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	if res.TwoHundredAndFourTextPlainRes != nil {
+	if res.TwoHundredApplicationJSONObject != nil {
 		// handle response
 	}
 }

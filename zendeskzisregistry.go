@@ -143,9 +143,9 @@ func New(opts ...SDKOption) *ZendeskZisRegistry {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "2.0.2",
-			GenVersion:        "2.188.1",
-			UserAgent:         "speakeasy-sdk/go 2.0.2 2.188.1 1.0.0 github.com/speakeasy-sdks/zd-zis-registry-test",
+			SDKVersion:        "2.0.3",
+			GenVersion:        "2.192.1",
+			UserAgent:         "speakeasy-sdk/go 2.0.3 2.192.1 1.0.0 github.com/speakeasy-sdks/zd-zis-registry-test",
 		},
 	}
 	for _, opt := range opts {

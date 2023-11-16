@@ -6,25 +6,6 @@ import (
 	"net/http"
 )
 
-type PostAPIServicesZisRegistryJobSpecsInstallSecurity struct {
-	Password string `security:"scheme,type=http,subtype=basic,name=password"`
-	Username string `security:"scheme,type=http,subtype=basic,name=username"`
-}
-
-func (o *PostAPIServicesZisRegistryJobSpecsInstallSecurity) GetPassword() string {
-	if o == nil {
-		return ""
-	}
-	return o.Password
-}
-
-func (o *PostAPIServicesZisRegistryJobSpecsInstallSecurity) GetUsername() string {
-	if o == nil {
-		return ""
-	}
-	return o.Username
-}
-
 type PostAPIServicesZisRegistryJobSpecsInstallRequest struct {
 	// (Required) The name of the job spec
 	JobSpecName *string `queryParam:"style=form,explode=true,name=job_spec_name"`
@@ -65,7 +46,7 @@ func (o *PostAPIServicesZisRegistryJobSpecsInstallResponse) GetContentType() str
 
 func (o *PostAPIServicesZisRegistryJobSpecsInstallResponse) GetHeaders() map[string][]string {
 	if o == nil {
-		return nil
+		return map[string][]string{}
 	}
 	return o.Headers
 }
