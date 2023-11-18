@@ -52,8 +52,6 @@ type PostAPIServicesZisRegistryIntegrationResponseBody struct {
 }
 
 type PostAPIServicesZisRegistryIntegrationResponse struct {
-	// OK
-	TwoHundredApplicationJSONObject *PostAPIServicesZisRegistryIntegrationResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	Headers     map[string][]string
@@ -61,13 +59,8 @@ type PostAPIServicesZisRegistryIntegrationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *PostAPIServicesZisRegistryIntegrationResponse) GetTwoHundredApplicationJSONObject() *PostAPIServicesZisRegistryIntegrationResponseBody {
-	if o == nil {
-		return nil
-	}
-	return o.TwoHundredApplicationJSONObject
+	// OK
+	Object *PostAPIServicesZisRegistryIntegrationResponseBody
 }
 
 func (o *PostAPIServicesZisRegistryIntegrationResponse) GetContentType() string {
@@ -96,4 +89,11 @@ func (o *PostAPIServicesZisRegistryIntegrationResponse) GetRawResponse() *http.R
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationResponse) GetObject() *PostAPIServicesZisRegistryIntegrationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.Object
 }

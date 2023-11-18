@@ -49,7 +49,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.TwoHundredAndFourTextPlainRes != nil {
+    if res.Res != nil {
         // handle response
     }
 }
@@ -117,7 +117,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.TwoHundredTextPlainRes != nil {
+    if res.Res != nil {
         // handle response
     }
 }

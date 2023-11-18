@@ -19,8 +19,6 @@ func (o *DeleteAPIServicesZisRegistryJobSpecsInstallRequest) GetJobSpecName() *s
 }
 
 type DeleteAPIServicesZisRegistryJobSpecsInstallResponse struct {
-	// No Content
-	TwoHundredAndFourTextPlainRes *string
 	// HTTP response content type for this operation
 	ContentType string
 	Headers     map[string][]string
@@ -28,13 +26,8 @@ type DeleteAPIServicesZisRegistryJobSpecsInstallResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetTwoHundredAndFourTextPlainRes() *string {
-	if o == nil {
-		return nil
-	}
-	return o.TwoHundredAndFourTextPlainRes
+	// No Content
+	Res *string
 }
 
 func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetContentType() string {
@@ -63,4 +56,11 @@ func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetRawResponse() *
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *DeleteAPIServicesZisRegistryJobSpecsInstallResponse) GetRes() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Res
 }

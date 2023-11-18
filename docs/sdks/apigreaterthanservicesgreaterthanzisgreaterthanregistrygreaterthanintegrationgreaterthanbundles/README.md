@@ -54,7 +54,7 @@ func main() {
         log.Fatal(err)
     }
 
-    if res.TwoHundredTextPlainRes != nil {
+    if res.Res != nil {
         // handle response
     }
 }

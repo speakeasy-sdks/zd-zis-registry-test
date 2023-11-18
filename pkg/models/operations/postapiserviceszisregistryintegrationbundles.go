@@ -48,8 +48,6 @@ func (o *PostAPIServicesZisRegistryIntegrationBundlesRequest) GetIntegration() s
 }
 
 type PostAPIServicesZisRegistryIntegrationBundlesResponse struct {
-	// OK
-	TwoHundredTextPlainRes *string
 	// HTTP response content type for this operation
 	ContentType string
 	Headers     map[string][]string
@@ -57,13 +55,8 @@ type PostAPIServicesZisRegistryIntegrationBundlesResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-}
-
-func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetTwoHundredTextPlainRes() *string {
-	if o == nil {
-		return nil
-	}
-	return o.TwoHundredTextPlainRes
+	// OK
+	Res *string
 }
 
 func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetContentType() string {
@@ -92,4 +85,11 @@ func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetRawResponse() 
 		return nil
 	}
 	return o.RawResponse
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationBundlesResponse) GetRes() *string {
+	if o == nil {
+		return nil
+	}
+	return o.Res
 }
