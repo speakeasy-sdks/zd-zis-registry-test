@@ -30,26 +30,25 @@ endpoint.
 package main
 
 import(
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/shared"
 	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
 	"context"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
 	"log"
 )
 
 func main() {
-    s := zdzisregistrytest.New()
-
-
-    operationSecurity := operations.PostAPIServicesZisRegistryIntegrationSecurity{
-            Password: "",
-            Username: "",
-        }
+    s := zdzisregistrytest.New(
+        zdzisregistrytest.WithSecurity(shared.Security{
+            Password: zdzisregistrytest.String("<YOUR_PASSWORD_HERE>"),
+        }),
+    )
 
     ctx := context.Background()
     res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration.PostAPIServicesZisRegistryIntegration(ctx, operations.PostAPIServicesZisRegistryIntegrationRequest{
         RequestBody: &operations.PostAPIServicesZisRegistryIntegrationRequestBody{},
         Integration: "string",
-    }, operationSecurity)
+    })
     if err != nil {
         log.Fatal(err)
     }
@@ -62,11 +61,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                | Type                                                                                                                                     | Required                                                                                                                                 | Description                                                                                                                              |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                    | [context.Context](https://pkg.go.dev/context#Context)                                                                                    | :heavy_check_mark:                                                                                                                       | The context to use for the request.                                                                                                      |
-| `request`                                                                                                                                | [operations.PostAPIServicesZisRegistryIntegrationRequest](../../pkg/models/operations/postapiserviceszisregistryintegrationrequest.md)   | :heavy_check_mark:                                                                                                                       | The request object to use for the request.                                                                                               |
-| `security`                                                                                                                               | [operations.PostAPIServicesZisRegistryIntegrationSecurity](../../pkg/models/operations/postapiserviceszisregistryintegrationsecurity.md) | :heavy_check_mark:                                                                                                                       | The security requirements to use for the request.                                                                                        |
+| Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                                  | :heavy_check_mark:                                                                                                                     | The context to use for the request.                                                                                                    |
+| `request`                                                                                                                              | [operations.PostAPIServicesZisRegistryIntegrationRequest](../../pkg/models/operations/postapiserviceszisregistryintegrationrequest.md) | :heavy_check_mark:                                                                                                                     | The request object to use for the request.                                                                                             |
 
 
 ### Response

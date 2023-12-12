@@ -1,4 +1,4 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```go
 package main
 
@@ -6,20 +6,19 @@ import (
 	"context"
 	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
 	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/shared"
 	"log"
 )
 
 func main() {
-	s := zdzisregistrytest.New(
-		zdzisregistrytest.WithSecurity(shared.Security{
-			Password: "",
-			Username: "",
-		}),
-	)
+	s := zdzisregistrytest.New()
+
+	operationSecurity := operations.DeleteAPIServicesZisRegistryJobSpecsInstallSecurity{
+		Password: "<YOUR_PASSWORD_HERE>",
+		Username: "<YOUR_USERNAME_HERE>",
+	}
 
 	ctx := context.Background()
-	res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{})
+	res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{}, operationSecurity)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -30,4 +29,4 @@ func main() {
 }
 
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

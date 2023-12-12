@@ -3,20 +3,20 @@
 package shared
 
 type Security struct {
-	Password string `security:"scheme,type=http,subtype=basic,name=password"`
-	Username string `security:"scheme,type=http,subtype=basic,name=username"`
+	Password *string `security:"scheme,type=http,subtype=basic,name=password"`
+	Username *string `security:"scheme,type=http,subtype=basic,name=username"`
 }
 
-func (o *Security) GetPassword() string {
+func (o *Security) GetPassword() *string {
 	if o == nil {
-		return ""
+		return nil
 	}
 	return o.Password
 }
 
-func (o *Security) GetUsername() string {
+func (o *Security) GetUsername() *string {
 	if o == nil {
-		return ""
+		return nil
 	}
 	return o.Username
 }
