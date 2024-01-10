@@ -6,6 +6,25 @@ import (
 	"net/http"
 )
 
+type PostAPIServicesZisRegistryIntegrationSecurity struct {
+	Password string `security:"scheme,type=http,subtype=basic,name=password"`
+	Username string `security:"scheme,type=http,subtype=basic,name=username"`
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationSecurity) GetPassword() string {
+	if o == nil {
+		return ""
+	}
+	return o.Password
+}
+
+func (o *PostAPIServicesZisRegistryIntegrationSecurity) GetUsername() string {
+	if o == nil {
+		return ""
+	}
+	return o.Username
+}
+
 type PostAPIServicesZisRegistryIntegrationRequestBody struct {
 }
 

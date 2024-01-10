@@ -28,23 +28,22 @@ app](/documentation/apps/getting-started/making-api-requests-from-a-zendesk-app/
 package main
 
 import(
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/shared"
 	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
 	"context"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
 	"log"
 )
 
 func main() {
-    s := zdzisregistrytest.New()
-
-
-    operationSecurity := operations.DeleteAPIServicesZisRegistryJobSpecsInstallSecurity{
-            Password: "<YOUR_PASSWORD_HERE>",
-            Username: "<YOUR_USERNAME_HERE>",
-        }
+    s := zdzisregistrytest.New(
+        zdzisregistrytest.WithSecurity(shared.Security{
+            Password: zdzisregistrytest.String("<YOUR_PASSWORD_HERE>"),
+        }),
+    )
 
     ctx := context.Background()
-    res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{}, operationSecurity)
+    res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.DeleteAPIServicesZisRegistryJobSpecsInstall(ctx, operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -57,11 +56,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                            | Type                                                                                                                                                 | Required                                                                                                                                             | Description                                                                                                                                          |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                                                | :heavy_check_mark:                                                                                                                                   | The context to use for the request.                                                                                                                  |
-| `request`                                                                                                                                            | [operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest](../../pkg/models/operations/deleteapiserviceszisregistryjobspecsinstallrequest.md)   | :heavy_check_mark:                                                                                                                                   | The request object to use for the request.                                                                                                           |
-| `security`                                                                                                                                           | [operations.DeleteAPIServicesZisRegistryJobSpecsInstallSecurity](../../pkg/models/operations/deleteapiserviceszisregistryjobspecsinstallsecurity.md) | :heavy_check_mark:                                                                                                                                   | The security requirements to use for the request.                                                                                                    |
+| Parameter                                                                                                                                          | Type                                                                                                                                               | Required                                                                                                                                           | Description                                                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                              | [context.Context](https://pkg.go.dev/context#Context)                                                                                              | :heavy_check_mark:                                                                                                                                 | The context to use for the request.                                                                                                                |
+| `request`                                                                                                                                          | [operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest](../../pkg/models/operations/deleteapiserviceszisregistryjobspecsinstallrequest.md) | :heavy_check_mark:                                                                                                                                 | The request object to use for the request.                                                                                                         |
 
 
 ### Response
@@ -97,23 +95,22 @@ app](/documentation/apps/getting-started/making-api-requests-from-a-zendesk-app/
 package main
 
 import(
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/shared"
 	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
 	"context"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
 	"log"
 )
 
 func main() {
-    s := zdzisregistrytest.New()
-
-
-    operationSecurity := operations.PostAPIServicesZisRegistryJobSpecsInstallSecurity{
-            Password: "<YOUR_PASSWORD_HERE>",
-            Username: "<YOUR_USERNAME_HERE>",
-        }
+    s := zdzisregistrytest.New(
+        zdzisregistrytest.WithSecurity(shared.Security{
+            Password: zdzisregistrytest.String("<YOUR_PASSWORD_HERE>"),
+        }),
+    )
 
     ctx := context.Background()
-    res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.PostAPIServicesZisRegistryJobSpecsInstall(ctx, operations.PostAPIServicesZisRegistryJobSpecsInstallRequest{}, operationSecurity)
+    res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall.PostAPIServicesZisRegistryJobSpecsInstall(ctx, operations.PostAPIServicesZisRegistryJobSpecsInstallRequest{})
     if err != nil {
         log.Fatal(err)
     }
@@ -126,11 +123,10 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
-| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `ctx`                                                                                                                                            | [context.Context](https://pkg.go.dev/context#Context)                                                                                            | :heavy_check_mark:                                                                                                                               | The context to use for the request.                                                                                                              |
-| `request`                                                                                                                                        | [operations.PostAPIServicesZisRegistryJobSpecsInstallRequest](../../pkg/models/operations/postapiserviceszisregistryjobspecsinstallrequest.md)   | :heavy_check_mark:                                                                                                                               | The request object to use for the request.                                                                                                       |
-| `security`                                                                                                                                       | [operations.PostAPIServicesZisRegistryJobSpecsInstallSecurity](../../pkg/models/operations/postapiserviceszisregistryjobspecsinstallsecurity.md) | :heavy_check_mark:                                                                                                                               | The security requirements to use for the request.                                                                                                |
+| Parameter                                                                                                                                      | Type                                                                                                                                           | Required                                                                                                                                       | Description                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ctx`                                                                                                                                          | [context.Context](https://pkg.go.dev/context#Context)                                                                                          | :heavy_check_mark:                                                                                                                             | The context to use for the request.                                                                                                            |
+| `request`                                                                                                                                      | [operations.PostAPIServicesZisRegistryJobSpecsInstallRequest](../../pkg/models/operations/postapiserviceszisregistryjobspecsinstallrequest.md) | :heavy_check_mark:                                                                                                                             | The request object to use for the request.                                                                                                     |
 
 
 ### Response
