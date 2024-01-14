@@ -4,7 +4,7 @@ management:
   docChecksum: 69546526e9c3f7c5bd11438ae3e1bda0
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.230.3
+  generationVersion: 2.231.0
   releaseVersion: 2.1.1
   configChecksum: f8545a4957325928ebf75ab2987740bc
   repoURL: https://github.com/speakeasy-sdks/zd-zis-registry-test.git
@@ -50,16 +50,16 @@ generatedFiles:
   - /pkg/models/sdkerrors/postapiserviceszisregistryintegration.go
   - /pkg/models/sdkerrors/postapiserviceszisregistryintegrationbundles.go
   - /pkg/models/shared/security.go
+  - docs/pkg/models/operations/deleteapiserviceszisregistryjobspecsinstallsecurity.md
   - docs/pkg/models/operations/deleteapiserviceszisregistryjobspecsinstallrequest.md
   - docs/pkg/models/operations/deleteapiserviceszisregistryjobspecsinstallresponse.md
+  - docs/pkg/models/operations/postapiserviceszisregistryjobspecsinstallsecurity.md
   - docs/pkg/models/operations/postapiserviceszisregistryjobspecsinstallrequest.md
   - docs/pkg/models/operations/postapiserviceszisregistryjobspecsinstallresponse.md
-  - docs/pkg/models/operations/postapiserviceszisregistryintegrationsecurity.md
   - docs/pkg/models/operations/postapiserviceszisregistryintegrationrequestbody.md
   - docs/pkg/models/operations/postapiserviceszisregistryintegrationrequest.md
   - docs/pkg/models/operations/postapiserviceszisregistryintegrationresponsebody.md
   - docs/pkg/models/operations/postapiserviceszisregistryintegrationresponse.md
-  - docs/pkg/models/operations/postapiserviceszisregistryintegrationbundlessecurity.md
   - docs/pkg/models/operations/postapiserviceszisregistryintegrationbundlesrequestbody.md
   - docs/pkg/models/operations/postapiserviceszisregistryintegrationbundlesrequest.md
   - docs/pkg/models/operations/postapiserviceszisregistryintegrationbundlesresponse.md
