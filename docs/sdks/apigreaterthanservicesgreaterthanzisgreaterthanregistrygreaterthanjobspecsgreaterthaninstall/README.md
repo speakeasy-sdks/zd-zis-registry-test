@@ -28,8 +28,8 @@ app](/documentation/apps/getting-started/making-api-requests-from-a-zendesk-app/
 package main
 
 import(
-	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
+	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v3"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/operations"
 	"context"
 	"log"
 )
@@ -97,8 +97,8 @@ app](/documentation/apps/getting-started/making-api-requests-from-a-zendesk-app/
 package main
 
 import(
-	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
+	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v3"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/operations"
 	"context"
 	"log"
 )

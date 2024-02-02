@@ -30,10 +30,10 @@ endpoint.
 package main
 
 import(
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/shared"
-	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/shared"
+	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v3"
 	"context"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/operations"
 	"log"
 )
 

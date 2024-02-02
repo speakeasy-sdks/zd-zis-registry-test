@@ -5,8 +5,8 @@ package zdzisregistrytest
 import (
 	"context"
 	"fmt"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/shared"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/utils"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/shared"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/utils"
 	"net/http"
 	"time"
 )
@@ -142,9 +142,9 @@ func New(opts ...SDKOption) *ZendeskZisRegistry {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "1.0.0",
-			SDKVersion:        "2.1.4",
-			GenVersion:        "2.245.1",
-			UserAgent:         "speakeasy-sdk/go 2.1.4 2.245.1 1.0.0 github.com/speakeasy-sdks/zd-zis-registry-test",
+			SDKVersion:        "3.0.0",
+			GenVersion:        "2.248.1",
+			UserAgent:         "speakeasy-sdk/go 3.0.0 2.248.1 1.0.0 github.com/speakeasy-sdks/zd-zis-registry-test",
 		},
 	}
 	for _, opt := range opts {

@@ -12,7 +12,7 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/types"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/types"
 
 	"github.com/ericlagergren/decimal"
 )

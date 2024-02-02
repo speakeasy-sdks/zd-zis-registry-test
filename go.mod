@@ -1,4 +1,4 @@
-module github.com/speakeasy-sdks/zd-zis-registry-test/v2
+module github.com/speakeasy-sdks/zd-zis-registry-test/v3
 
 go 1.20
 

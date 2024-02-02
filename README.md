@@ -18,8 +18,8 @@ package main
 
 import (
 	"context"
-	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
+	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v3"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/operations"
 	"log"
 )
 
@@ -97,9 +97,9 @@ package main
 import (
 	"context"
 	"errors"
-	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/sdkerrors"
+	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v3"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/operations"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/sdkerrors"
 	"log"
 )
 
@@ -170,8 +170,8 @@ package main
 
 import (
 	"context"
-	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
+	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v3"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/operations"
 	"log"
 )
 
@@ -207,8 +207,8 @@ package main
 
 import (
 	"context"
-	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
+	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v3"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/operations"
 	"log"
 )
 
@@ -287,9 +287,9 @@ package main
 
 import (
 	"context"
-	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/shared"
+	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v3"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/operations"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/shared"
 	"log"
 )
 
@@ -324,8 +324,8 @@ package main
 
 import (
 	"context"
-	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v2"
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v2/pkg/models/operations"
+	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v3"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/operations"
 	"log"
 )
 
