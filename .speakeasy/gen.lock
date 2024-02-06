@@ -4,7 +4,7 @@ management:
   docChecksum: 69546526e9c3f7c5bd11438ae3e1bda0
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.248.6
+  generationVersion: 2.250.2
   releaseVersion: 3.0.1
   configChecksum: def336644815c24d9826fe3031a7692d
   repoURL: https://github.com/speakeasy-sdks/zd-zis-registry-test.git
