@@ -30,25 +30,26 @@ endpoint.
 package main
 
 import(
-	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/shared"
 	zdzisregistrytest "github.com/speakeasy-sdks/zd-zis-registry-test/v3"
-	"context"
 	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/operations"
+	"context"
 	"log"
 )
 
 func main() {
-    s := zdzisregistrytest.New(
-        zdzisregistrytest.WithSecurity(shared.Security{
-            Password: zdzisregistrytest.String("<YOUR_PASSWORD_HERE>"),
-        }),
-    )
+    s := zdzisregistrytest.New()
+
+
+    operationSecurity := operations.PostAPIServicesZisRegistryIntegrationBundlesSecurity{
+            Password: "<YOUR_PASSWORD_HERE>",
+            Username: "<YOUR_USERNAME_HERE>",
+        }
 
     ctx := context.Background()
     res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegrationGreaterThanBundles.PostAPIServicesZisRegistryIntegrationBundles(ctx, operations.PostAPIServicesZisRegistryIntegrationBundlesRequest{
         RequestBody: &operations.PostAPIServicesZisRegistryIntegrationBundlesRequestBody{},
         Integration: "string",
-    })
+    }, operationSecurity)
     if err != nil {
         log.Fatal(err)
     }
@@ -61,10 +62,11 @@ func main() {
 
 ### Parameters
 
-| Parameter                                                                                                                                            | Type                                                                                                                                                 | Required                                                                                                                                             | Description                                                                                                                                          |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ctx`                                                                                                                                                | [context.Context](https://pkg.go.dev/context#Context)                                                                                                | :heavy_check_mark:                                                                                                                                   | The context to use for the request.                                                                                                                  |
-| `request`                                                                                                                                            | [operations.PostAPIServicesZisRegistryIntegrationBundlesRequest](../../pkg/models/operations/postapiserviceszisregistryintegrationbundlesrequest.md) | :heavy_check_mark:                                                                                                                                   | The request object to use for the request.                                                                                                           |
+| Parameter                                                                                                                                              | Type                                                                                                                                                   | Required                                                                                                                                               | Description                                                                                                                                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ctx`                                                                                                                                                  | [context.Context](https://pkg.go.dev/context#Context)                                                                                                  | :heavy_check_mark:                                                                                                                                     | The context to use for the request.                                                                                                                    |
+| `request`                                                                                                                                              | [operations.PostAPIServicesZisRegistryIntegrationBundlesRequest](../../pkg/models/operations/postapiserviceszisregistryintegrationbundlesrequest.md)   | :heavy_check_mark:                                                                                                                                     | The request object to use for the request.                                                                                                             |
+| `security`                                                                                                                                             | [operations.PostAPIServicesZisRegistryIntegrationBundlesSecurity](../../pkg/models/operations/postapiserviceszisregistryintegrationbundlessecurity.md) | :heavy_check_mark:                                                                                                                                     | The security requirements to use for the request.                                                                                                      |
 
 
 ### Response
