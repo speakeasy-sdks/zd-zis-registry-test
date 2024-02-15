@@ -48,7 +48,7 @@ func main() {
     ctx := context.Background()
     res, err := s.APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegration.PostAPIServicesZisRegistryIntegration(ctx, operations.PostAPIServicesZisRegistryIntegrationRequest{
         RequestBody: &operations.PostAPIServicesZisRegistryIntegrationRequestBody{},
-        Integration: "string",
+        Integration: "<value>",
     }, operationSecurity)
     if err != nil {
         log.Fatal(err)

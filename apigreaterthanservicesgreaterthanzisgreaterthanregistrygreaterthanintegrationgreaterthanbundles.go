@@ -6,6 +6,7 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/internal/hooks"
 	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/operations"
 	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/models/sdkerrors"
 	"github.com/speakeasy-sdks/zd-zis-registry-test/v3/pkg/utils"
@@ -41,6 +42,8 @@ func newAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegr
 // Job Spec](/api-reference/integration-services/registry/jobspecs/#uninstall-job-spec)
 // endpoint.
 func (s *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanIntegrationGreaterThanBundles) PostAPIServicesZisRegistryIntegrationBundles(ctx context.Context, request operations.PostAPIServicesZisRegistryIntegrationBundlesRequest, security operations.PostAPIServicesZisRegistryIntegrationBundlesSecurity, opts ...operations.Option) (*operations.PostAPIServicesZisRegistryIntegrationBundlesResponse, error) {
+	hookCtx := hooks.HookContext{OperationID: "post_/api/services/zis/registry/{integration}/bundles"}
+
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -52,17 +55,17 @@ func (s *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanInteg
 		}
 	}
 	baseURL := utils.ReplaceParameters(s.sdkConfiguration.GetServerDetails())
-	url, err := utils.GenerateURL(ctx, baseURL, "/api/services/zis/registry/{integration}/bundles", request, nil)
+	opURL, err := utils.GenerateURL(ctx, baseURL, "/api/services/zis/registry/{integration}/bundles", request, nil)
 	if err != nil {
 		return nil, fmt.Errorf("error generating URL: %w", err)
 	}
 
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
 	if err != nil {
-		return nil, fmt.Errorf("error serializing request body: %w", err)
+		return nil, err
 	}
 
-	req, err := http.NewRequestWithContext(ctx, "POST", url, bodyReader)
+	req, err := http.NewRequestWithContext(ctx, "POST", opURL, bodyReader)
 	if err != nil {
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
@@ -72,20 +75,38 @@ func (s *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanInteg
 		req.Header.Set("Accept", "application/json;q=1, text/plain;q=0")
 	}
 
-	req.Header.Set("user-agent", s.sdkConfiguration.UserAgent)
-
+	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 	req.Header.Set("Content-Type", reqContentType)
 
 	utils.PopulateHeaders(ctx, req, request)
 
 	client := utils.ConfigureSecurityClient(s.sdkConfiguration.DefaultClient, withSecurity(security))
 
-	httpRes, err := client.Do(req)
+	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{hookCtx}, req)
 	if err != nil {
-		return nil, fmt.Errorf("error sending request: %w", err)
+		return nil, err
 	}
-	if httpRes == nil {
-		return nil, fmt.Errorf("error sending request: no response")
+
+	httpRes, err := client.Do(req)
+	if err != nil || httpRes == nil {
+		if err != nil {
+			err = fmt.Errorf("error sending request: %w", err)
+		} else {
+			err = fmt.Errorf("error sending request: no response")
+		}
+
+		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, nil, err)
+		return nil, err
+	} else if utils.MatchStatusCodes([]string{"400", "401", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{hookCtx}, httpRes, nil)
+		if err != nil {
+			return nil, err
+		}
+	} else {
+		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{hookCtx}, httpRes)
+		if err != nil {
+			return nil, err
+		}
 	}
 
 	contentType := httpRes.Header.Get("Content-Type")
@@ -102,6 +123,7 @@ func (s *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanInteg
 	}
 	httpRes.Body.Close()
 	httpRes.Body = io.NopCloser(bytes.NewBuffer(rawBody))
+
 	switch {
 	case httpRes.StatusCode == 200:
 		res.Headers = httpRes.Header
