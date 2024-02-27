@@ -363,3 +363,13 @@ Based on:
 - [go v3.2.2] .
 ### Releases
 - [Go v3.2.2] https://github.com/speakeasy-sdks/zd-zis-registry-test/releases/tag/v3.2.2 - .
+
+## 2024-02-27 00:59:26
+### Changes
+Based on:
+- OpenAPI Doc 1.0.0 
+- Speakeasy CLI 1.194.0 (2.272.7) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [go v3.2.3] .
+### Releases
+- [Go v3.2.3] https://github.com/speakeasy-sdks/zd-zis-registry-test/releases/tag/v3.2.3 - .

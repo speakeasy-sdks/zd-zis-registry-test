@@ -39,11 +39,11 @@ func newAPIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpe
 // #### Allowed for
 //
 // * Admins
-func (s *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall) DeleteAPIServicesZisRegistryJobSpecsInstall(ctx context.Context, request operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest, opts ...operations.Option) (*operations.DeleteAPIServicesZisRegistryJobSpecsInstallResponse, error) {
+func (s *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall) DeleteAPIServicesZisRegistryJobSpecsInstall(ctx context.Context, request operations.DeleteAPIServicesZisRegistryJobSpecsInstallRequest, security operations.DeleteAPIServicesZisRegistryJobSpecsInstallSecurity, opts ...operations.Option) (*operations.DeleteAPIServicesZisRegistryJobSpecsInstallResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "delete_/api/services/zis/registry/job_specs/install",
-		SecuritySource: s.sdkConfiguration.Security,
+		SecuritySource: withSecurity(security),
 	}
 
 	o := operations.Options{}
@@ -80,7 +80,7 @@ func (s *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
+	client := utils.ConfigureSecurityClient(s.sdkConfiguration.DefaultClient, withSecurity(security))
 
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {
@@ -215,11 +215,11 @@ func (s *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 // #### Allowed for
 //
 // * Admins
-func (s *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall) PostAPIServicesZisRegistryJobSpecsInstall(ctx context.Context, request operations.PostAPIServicesZisRegistryJobSpecsInstallRequest, opts ...operations.Option) (*operations.PostAPIServicesZisRegistryJobSpecsInstallResponse, error) {
+func (s *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSpecsGreaterThanInstall) PostAPIServicesZisRegistryJobSpecsInstall(ctx context.Context, request operations.PostAPIServicesZisRegistryJobSpecsInstallRequest, security operations.PostAPIServicesZisRegistryJobSpecsInstallSecurity, opts ...operations.Option) (*operations.PostAPIServicesZisRegistryJobSpecsInstallResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
 		OperationID:    "post_/api/services/zis/registry/job_specs/install",
-		SecuritySource: s.sdkConfiguration.Security,
+		SecuritySource: withSecurity(security),
 	}
 
 	o := operations.Options{}
@@ -256,7 +256,7 @@ func (s *APIGreaterThanServicesGreaterThanZisGreaterThanRegistryGreaterThanJobSp
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
-	client := s.sdkConfiguration.SecurityClient
+	client := utils.ConfigureSecurityClient(s.sdkConfiguration.DefaultClient, withSecurity(security))
 
 	req, err = s.sdkConfiguration.Hooks.BeforeRequest(hooks.BeforeRequestContext{HookContext: hookCtx}, req)
 	if err != nil {

@@ -4,9 +4,9 @@ management:
   docChecksum: 69546526e9c3f7c5bd11438ae3e1bda0
   docVersion: 1.0.0
   speakeasyVersion: internal
-  generationVersion: 2.272.4
-  releaseVersion: 3.2.2
-  configChecksum: 7b0f42f5065eee164062c47845709ef0
+  generationVersion: 2.272.7
+  releaseVersion: 3.2.3
+  configChecksum: 337e715de715e7af878370cf46e50d83
   repoURL: https://github.com/speakeasy-sdks/zd-zis-registry-test.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/zd-zis-registry-test
@@ -14,7 +14,7 @@ management:
 features:
   go:
     core: 3.4.3
-    globalSecurity: 2.82.7
+    globalSecurity: 2.82.8
     globalServerURLs: 2.82.1
     methodSecurity: 2.82.2
 generatedFiles:
@@ -48,16 +48,16 @@ generatedFiles:
   - /pkg/models/sdkerrors/postapiserviceszisregistryintegration.go
   - /pkg/models/sdkerrors/postapiserviceszisregistryintegrationbundles.go
   - /pkg/models/shared/security.go
+  - docs/pkg/models/operations/deleteapiserviceszisregistryjobspecsinstallsecurity.md
   - docs/pkg/models/operations/deleteapiserviceszisregistryjobspecsinstallrequest.md
   - docs/pkg/models/operations/deleteapiserviceszisregistryjobspecsinstallresponse.md
+  - docs/pkg/models/operations/postapiserviceszisregistryjobspecsinstallsecurity.md
   - docs/pkg/models/operations/postapiserviceszisregistryjobspecsinstallrequest.md
   - docs/pkg/models/operations/postapiserviceszisregistryjobspecsinstallresponse.md
-  - docs/pkg/models/operations/postapiserviceszisregistryintegrationsecurity.md
   - docs/pkg/models/operations/postapiserviceszisregistryintegrationrequestbody.md
   - docs/pkg/models/operations/postapiserviceszisregistryintegrationrequest.md
   - docs/pkg/models/operations/postapiserviceszisregistryintegrationresponsebody.md
   - docs/pkg/models/operations/postapiserviceszisregistryintegrationresponse.md
-  - docs/pkg/models/operations/postapiserviceszisregistryintegrationbundlessecurity.md
   - docs/pkg/models/operations/postapiserviceszisregistryintegrationbundlesrequestbody.md
   - docs/pkg/models/operations/postapiserviceszisregistryintegrationbundlesrequest.md
   - docs/pkg/models/operations/postapiserviceszisregistryintegrationbundlesresponse.md
