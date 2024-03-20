@@ -3,10 +3,10 @@ id: 0dc451f6-fbec-4e5f-8452-1018f51fe1b3
 management:
   docChecksum: 69546526e9c3f7c5bd11438ae3e1bda0
   docVersion: 1.0.0
-  speakeasyVersion: 1.207.1
-  generationVersion: 2.280.6
-  releaseVersion: 3.3.1
-  configChecksum: f79e1b8688ba77693ce796510ad57573
+  speakeasyVersion: 1.213.0
+  generationVersion: 2.283.1
+  releaseVersion: 3.3.2
+  configChecksum: 8a6f3ecbee52a57292cb74ff0cf35c90
   repoURL: https://github.com/speakeasy-sdks/zd-zis-registry-test.git
   repoSubDirectory: .
   installationURL: https://github.com/speakeasy-sdks/zd-zis-registry-test
@@ -14,7 +14,7 @@ management:
 features:
   go:
     core: 3.4.4
-    globalSecurity: 2.82.8
+    globalSecurity: 2.82.9
     globalServerURLs: 2.82.2
     methodSecurity: 2.82.2
     responseFormat: 0.1.0
